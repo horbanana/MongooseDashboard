@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Dogs Dashboard</h1>
+        <table class="table">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Breed</th>
+                <th scope="col">Age</th>
+                <th scope="col">Favorite Food</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            <%for(let i = 0; i<dogs.length; i++) { %>
+                <tr scope="row">
+                    <td><%= dogs[i].name %></td>
+                    <td><%= dogs[i].breed %></td>
+                    <td><%= dogs[i].age %></td>
+                    <td><%= dogs[i].favoriteFood %></td>
+                    <td><%= dogs[i].owner %></td>
+                    <td><a href ="/dog/<%= dogs[i]._id %>">Edit</a></td>
+                    <td><a href ="/dog/delete/<%= dogs[i]._id %>">Delete</a></td>
+                </tr>
+            <% } %>
+
+            <form action="/dog" method="post" >
+                <div class="form-group">
+                    <p>Name:<input type="text" name="name"/></p>
+                </div>
+                <div class="form-group">
+                    <p>Breed:<input type="text" name="breed"/></p>
+                </div>
+                <div class="form-group">
+                    <p>Age:<input type="number" name="age" min="0"/></p>
+                </div>
+                <div class="form-group">
+                    <p>Favorite Food:<input type="text" name="favoriteFood"/></p>
+                </div>
+                <div class="form-group">
+                <p>Owner:<input type="text" name="owner"/></p>
+                </div>  
+                <input type="submit" value="Submit"class="btn btn-success" >
+            </form>
+        </table>
+</div>
+</body>
+</html>

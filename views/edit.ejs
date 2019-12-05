@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Edit your dog</h3>
+    <form action="/dog/<%= dog._id%>" method="post">
+        <div class="form-group">
+            <p>Name:<input type="text" name="name" value=" <%= dog.name %>" /> </p>
+        </div>
+        <div class="form-group">
+            <p>Breed:<input type="text" name="breed" value="<%=dog.breed %>" /></p>
+        </div>
+        <div class="form-group">
+        <p>Age:<input type="number" name="age" min="0" value="<%= dog.age %>" /></p>
+        </div>
+        <div class="form-group">
+            <p>Favorite Food:<input type="text" name="favoriteFood"  value="<%= dog.favoriteFood %>" /></p>
+        </div>
+        <div class="form-group">
+            <p>Owner:<input type="text" name="owner" value="<%=dog.owner %>" /></p>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-success" >
+    </form>
+</body>
+</html>
